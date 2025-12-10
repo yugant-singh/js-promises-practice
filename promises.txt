@@ -1,0 +1,131 @@
+
+===========================================================================
+📌 What is a Promise in JavaScript?
+1. Definition
+
+Promise ek object hai jo kisi asynchronous operation ke result ko represent karta hai.
+
+Ye ek “future value” ka container hai.
+
+Matlab: Promise tumhe guarantee deta hai ki ya to kaam complete hoga (success) ya fail hoga (error).
+----------------------------------------------------------------------------
+2. States of a Promise
+
+Promise ke 3 states hote hain:
+
+Pending → Jab tak async task chal raha hai.
+Fulfilled → Jab task successfully complete ho jaye (resolve).
+Rejected → Jab task fail ho jaye (error).
+----------------------------------------------------------------------------
+3. Basic Example
+let myPromise = new Promise((resolve, reject) => {
+  let success = true;
+
+  if (success) {
+    resolve("Task complete!");
+  } else {
+    reject("Task failed!");
+  }
+});
+
+myPromise
+  .then((result) => console.log(result))   // success case
+  .catch((error) => console.log(error));   // failure case
+
+👉 Agar success = true → output: Task complete!
+👉 Agar success = false → output: Task failed!
+------------------------------------------------------------------------------
+4. Why Promises?
+
+Callbacks me problem hoti thi (callback hell).
+Promises ne async code ko clean aur readable banaya.
+Chain kar sakte ho multiple tasks easily:
+
+doTask1()
+  .then(doTask2)
+  .then(doTask3)
+  .catch(handleError);
+  ----------------------------------------------------------------------------
+  5. Real-life Example
+
+Pizza order kiya 🍕 → tumhe ek promise mila ki “pizza deliver hoga.”
+Agar deliver ho gaya → Promise fulfilled.
+Agar kitchen band tha → Promise rejected.
+
+===========================================================================
+📌 Why async / await?
+
+1. Problem with Promises
+
+Promises ne callbacks ka problem solve kiya, lekin kabhi kabhi .then() aur .catch() chain badi ho jaati hai, aur code utna readable nahi lagta.
+
+Example (Promise style):
+
+fetch("https://api.example.com/data")
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((err) => console.log(err));
+
+
+Yaha code readable hai, lekin agar bahut saare steps ho gaye to phir again messy lagne lagega.
+---------------------------------------------------------------------------
+2. Solution → Async/Await
+
+* async/await Promises ko handle karne ka ek aur easy syntax hai.
+
+* Ye code ko aisa dikhata hai jaise synchronous hai, lekin andar se wo     asynchronous hi hota hai.
+
+Matlab: tum promises likhoge par await ki wajah se wo ek line me handle ho jayega.
+---------------------------------------------------------------------------
+3. How it works
+
+async → function ko asynchronous banata hai (ye function hamesha ek Promise return karta hai).
+
+await → promise ke result ka wait karta hai bina pura code block kiye (non-blocking).
+---------------------------------------------------------------------------
+4. Example with Async/Await
+async function getData() {
+  try {
+    let res = await fetch("https://api.example.com/data");
+    let data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.log("Error:", err);
+  }
+}
+
+getData();
+---------------------------------------------------------------------------
+5. Shortcut Understanding
+
+Callbacks → complex ho jaata hai (callback hell).
+Promises → better syntax with .then() and .catch().
+Async/Await → aur zyada clean aur sync-looking async code.
+---------------------------------------------------------------------------
+===========================================================================
+🟡 Level 2: Questions
+Q3 --> Ek function downloadFile(url, callback) banao jo 3 sec baad bole:
+      File downloaded from https://example.com
+      ---------------------------------------------------------------------
+Ans -->
+
+function downloadFile(url, callback) {
+    setTimeout(() => {
+        callback(url);
+
+    }, 3000);
+}
+function searchFile(path) {
+    console.log(`File downloaded from ${path}`);
+}
+downloadFile("https://example.com", searchFile);
+
+-----------------------------------------------------------------------------
+Q4 --> Ek function getUser(id, callback) banao jo 2 sec wait kare aur phir ek object pass kare:
+
+{ id: 1, name: "Aman" }
+
+Output aana chahiye:
+User received: 1 Aman

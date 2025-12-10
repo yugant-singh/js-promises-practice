@@ -1,0 +1,66 @@
+⭐ PROMISES PRACTICE SET – PART 1 (Easy → Medium)
+__________________________________________________
+
+✅ Q1.
+ Ek promise banao jo 2 seconds baad "Data received" resolve kare.
+__________________________________________________
+✅ Q2.
+ Ek promise banao jo random number 1–10 generate kare:
+
+Agar number > 5 ho → resolve
+Agar number ≤ 5 ho → reject
+__________________________________________________
+✅ Q3.
+ Ek promise banao jo:
+
+. 1 sec baad "Step 1" print kare
+. Fir .then() me "Step 2" print kare
+. Fir "Step 3"
+__________________________________________________
+✅ Q4
+Promise reject hone par .catch() chal raha hai ya nahi — test karne ke liye code banao.
+__________________________________________________
+
+✅ Q5.
+
+2 promises banao:
+P1: 1 sec baad resolve
+P2: 3 sec baad resolve
+Promise.all() ka output kya aayega?
+__________________________________________________
+
+✅ Q6.
+
+Do promises me se jo pehle complete ho use show karo.
+(Promise.race())
+__________________________________________________
+
+✅ Q7.
+
+Promise chain banao:
+
+First: return number 10
+
+Second: number * 2
+
+Third: number + 5
+Final output: 25
+__________________________________________________
+
+✅ Q8.
+
+Promise ke andar error throw karke dekhna.
+.catch() chalega ya nahi?
+__________________________________________________
+
+✅ Q9.
+
+Ek function delayedMessage(msg, time) banao jo promise return kare.
+Use 3 baar call karo different delays ke saath.
+__________________________________________________
+✅ Q10.
+
+Ek array of numbers do: [1,2,3]
+Har number ke liye promise return karo jo 1 sec baad uska double de.
+Fir iss array ko Promise.all() me chalako.
+__________________________________________________
