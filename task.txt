@@ -1,66 +1,27 @@
-⭐ PROMISES PRACTICE SET – PART 1 (Easy → Medium)
+⭐ PROMISES Chaining PRACTICE SET – PART 1 (Easy → Medium -> Hard)
 __________________________________________________
-
-✅ Q1.
- Ek promise banao jo 2 seconds baad "Data received" resolve kare.
+✅4(median).Ek promise banao jo 1 sec baad "A" return kare.
+// Chain:
 __________________________________________________
-✅ Q2.
- Ek promise banao jo random number 1–10 generate kare:
+// ✅ Q5 (Hard)
 
-Agar number > 5 ho → resolve
-Agar number ≤ 5 ho → reject
-__________________________________________________
-✅ Q3.
- Ek promise banao jo:
+// Ek function getNumber(n) banao jo promise return karta ho:
 
-. 1 sec baad "Step 1" print kare
-. Fir .then() me "Step 2" print kare
-. Fir "Step 3"
-__________________________________________________
-✅ Q4
-Promise reject hone par .catch() chal raha hai ya nahi — test karne ke liye code banao.
-__________________________________________________
+// 1 sec baad number return kare
+// Chain:
+// getNumber(5)
+// value * 4
+// value - 3
+// value / 2
+// final result print
+____________________________________________________
+✅ Q6 (Hard)
 
-✅ Q5.
+3 steps ko chain karo:
 
-2 promises banao:
-P1: 1 sec baad resolve
-P2: 3 sec baad resolve
-Promise.all() ka output kya aayega?
-__________________________________________________
+1."Fetching user…" print
+2."User found" return
+3."Fetching posts…" print
+4."Posts loaded" return
+5.final message print
 
-✅ Q6.
-
-Do promises me se jo pehle complete ho use show karo.
-(Promise.race())
-__________________________________________________
-
-✅ Q7.
-
-Promise chain banao:
-
-First: return number 10
-
-Second: number * 2
-
-Third: number + 5
-Final output: 25
-__________________________________________________
-
-✅ Q8.
-
-Promise ke andar error throw karke dekhna.
-.catch() chalega ya nahi?
-__________________________________________________
-
-✅ Q9.
-
-Ek function delayedMessage(msg, time) banao jo promise return kare.
-Use 3 baar call karo different delays ke saath.
-__________________________________________________
-✅ Q10.
-
-Ek array of numbers do: [1,2,3]
-Har number ke liye promise return karo jo 1 sec baad uska double de.
-Fir iss array ko Promise.all() me chalako.
-__________________________________________________
