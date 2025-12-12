@@ -6,43 +6,34 @@ Har question asynchronous behavior, resolve/reject handling aur chaining
 ko demonstrate karta hai.
 
 ------------------------------------------------------------------------
+##  PROMISES Chaining PRACTICE SET – PART 1 (Easy → Medium -> Hard)
+__________________________________________________
+### ✅4(median).Ek promise banao jo 1 sec baad "A" return kare.
+// Chain:
+__________________________________________________
+### // ✅ Q5 (Hard)
 
-## 📌 Q1 --- Basic Promise (Resolve after 2 sec)
+// Ek function getNumber(n) banao jo promise return karta ho:
 
--   2 second baad `Data Received` return hota hai.
--   Simple resolve test.
+// 1 sec baad number return kare
+// Chain:
+// getNumber(5)
+// value * 4
+// value - 3
+// value / 2
+// final result print
+____________________________________________________
+### ✅ Q6 (Hard)
 
-------------------------------------------------------------------------
+3 steps ko chain karo:
 
-## 📌 Q2 --- Random Number Promise
+1."Fetching user…" print
+2."User found" return
+3."Fetching posts…" print
+4."Posts loaded" return
+5.final message print
 
--   Random number 1--10 generate hota hai.
--   Number \> 5 → resolve\
--   Number ≤ 5 → reject
 
-------------------------------------------------------------------------
-
-## 📌 Q3 --- Promise Chaining Example
-
-Sequential steps:\
-1. After 1 sec → "Step 1"\
-2. `.then()` → "Step 2"\
-3. Next `.then()` → "Step 3"
-
-------------------------------------------------------------------------
-
-## 📌 Q4 --- Promise Rejection Handling
-
--   Test to confirm `.catch()` is triggered when promise gets rejected.
-
-------------------------------------------------------------------------
-
-## 📌 Q5 --- Promise.all Example
-
-Two promises:\
-- P1 → resolves after 1 sec\
-- P2 → resolves after 3 sec\
-- `Promise.all()` waits for both and then returns combined array.
 
 ------------------------------------------------------------------------
 
